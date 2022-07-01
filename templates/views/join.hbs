@@ -1,0 +1,31 @@
+{{>headerLinks}}
+<body>
+   {{>navbar}}
+
+    <!-- main-header -->
+     <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row">
+                    <div class="col-12 main_header_left">
+                      <div class="container">
+                        <form action="/join" method="post" id="contact">
+                           <input type="text" name="username" placeholder="Your Name" id="name">
+                           <input type="text" name="age" id="age" placeholder="Your Age">
+                            <input type="text" name="phone" id="phone" placeholder="Mobile No.">
+                           <textarea name="address" id="address" cols="10" rows="5" placeholder="Enter your Address"></textarea>
+                           <textarea name="more" id="more" cols="10" rows="5" placeholder="Tell us about your Interest"></textarea>
+                           <button class="btn joinbtn">Submit</button>
+                        </form>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{>footer}}
+
+    
+</body>
+</html>
