@@ -72,13 +72,18 @@ body{
  }
  .main_header_left p{
      font-size: 2rem;
-     color: #fff;
+     color: #f5f5dc;
      font-style: italic;
      font-family: serif;
  }
+
+ .main_header_left h4{
+    color: #eee8aa;
+ }
+
  .main_header_left h1{
      font-size: 3rem;
-     margin: 1rem 0 4rem 0;
+     margin: 1rem 0 1.5rem 0;
      text-transform:capitalize;
  }
  .main_header_left span{ 
