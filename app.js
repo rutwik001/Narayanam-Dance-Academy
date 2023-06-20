@@ -1,16 +1,18 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const hbs = require('hbs'); 
 const bodyparser = require("body-parser");
 
 // getting-started.js
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/RegisterDance', {useNewUrlParser: true});
-
+mongoose.connect("mongodb+srv://rutwik:rutwik982@ndaapp.d1mw8qw.mongodb.net/ndaapp?retryWrites=true&w=majority", 
+{useNewUrlParser: true,
+useUnifiedTopology:true});
+mongoose.set('strictQuery', true);
 //schema
-const registerSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
     username : String,
     age : String,
     phone : String,
@@ -19,7 +21,7 @@ const registerSchema = new mongoose.Schema({
  });
 
 //modal
-  const Register = mongoose.model('Register', registerSchema);
+  const UserModel = mongoose.model("users", UserSchema);
 
 //EXPRESS SPECIFIC STUFF
 app.use('/public', express.static('public')); 
@@ -44,9 +46,9 @@ app.get("/join", (req,res)=>{
 app.get("/admited", (req,res)=>{
             res.render('admited');
           });
-        
+
 app.post("/join", (req,res)=>{
-     var myData = new Register(req.body);
+     var myData = new UserModel(req.body);
      var name = req.body.username;
      myData.save().then(()=>{
         res.render('admited',{
@@ -57,6 +59,10 @@ app.post("/join", (req,res)=>{
     });
         });
 
+app.get("/danceforms", (req,res)=>{
+            res.render('danceforms');
+          });
+        
 app.get("/about", (req,res)=>{
                 res.render('about');
             });     
