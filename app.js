@@ -65,9 +65,6 @@ app.get("/danceforms", (req,res)=>{
             res.render('danceforms');
           });
 
-app.get("/register", (req,res)=>{
-            res.render('register');
-          });
 
 app.get("/about", (req,res)=>{
                 res.render('about');
