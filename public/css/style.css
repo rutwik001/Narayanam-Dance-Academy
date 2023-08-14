@@ -20,7 +20,6 @@ html{
     font-size: 62.5%;  /* 1rem=10px */
 }
 body{
-    height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -62,9 +61,11 @@ body{
  /* main header */
  .main_header{
      background: linear-gradient(to top left,rgb(1, 0, 0),rgb(22, 9, 9),rgb(43, 43, 243));
+     min-height: 100vh;
+     max-width: 100vw;
  }
  .main_header_left{
-     height: 50rem;
+     height: 60rem;
      display: flex;
      flex-direction: column;
      justify-content: center;
@@ -108,13 +109,21 @@ body{
     background-color: green;
     color:#fff;
   }
-  .main_header_left h2{
+  h2{
     font-family: 'Cormorant Upright',serif;
     font-weight: 600;
     font-size: 3rem;
     color: #DCCA87;
     margin-top: 2rem;
 }
+.main_header_left h3{
+    font-family: 'Cormorant Upright',serif;
+    font-weight: 600;
+    font-size: 2.3rem;
+    color: #eebe12;
+    margin-top: 2rem;
+}
+
 .main_header_left h6{
     color: #998480;
     font-size:2rem ;
@@ -122,7 +131,7 @@ body{
     margin: 1.5rem auto;
 }
  .main_header_right{
-    height: 50rem;
+    height: 60rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -133,29 +142,42 @@ body{
    width: 40rem;
    margin: 0 auto;
 }
+p{
+ font-size: 2rem;
+ font-family:'Alegreya', serif;
+ color: #f2f1e6;
+}
+h2{
+    font-size: 3rem;
+}
+
+.join p{
+ font-size: 1.8rem;
+ font-family:'Alegreya', serif;
+ color: #f8f4b6; 
+}
+.join h3{
+    font-size: 2.2rem;
+    color: rgb(196, 249, 244);
+    font-family: 'Noto Serif Display', serif;
+    margin-bottom: 2rem;
+    font-weight: 200;
+    line-height: 3rem;
+}
 #bgimg{
     filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.8) );
 }
 #bgimg:hover{
     filter: drop-shadow(0 0.5rem 1rem rgba(0,8px,0,0.8) );
 }
-.joinbtn{
-  margin: 0.8rem 14.4rem;
-  border-radius: 1.7rem;
-  font-size: 1.4rem;
-  font-weight:600;
-  padding:0.8rem 1.5rem;
-  border: none;
-  color: #000;
-}
 
 footer{
     width: 100%;
     background-color: var(--main-bg);
     margin-top: auto;
+    bottom: 0rem;
 }
 footer p{
-    margin: 0;
     text-align: center;
     color: #fff;
     font-size: 1.4rem;
@@ -164,15 +186,21 @@ footer p{
 
 /* Responsive Code */
 
-@media (max-width : 768px){
+@media (max-width : 800px){
     .main_header_left{
         height: auto;
-        margin: 5rem 0;
+        margin: 5rem auto;
     }
     .main_header_right{
         height: auto;
         margin-right: 3rem;
         margin-bottom: 2rem;
+    }
+    ::placeholder,select,label,option,.form p{
+        font-size: 1.3rem;
+    }
+    .formbtn{
+        padding: 0rem;
     }
 }
 
@@ -180,31 +208,101 @@ footer p{
 
 /* Register-Page */
 .container{
-    height: 44rem;
     width: 40rem;
+    max-width: 60vw;
     background: linear-gradient(to top left,rgba(207, 187, 72, 0.4),rgb(0, 0, 0,0.2),rgba(36, 52, 126, 0.7));
     padding: 15px;
     box-sizing: border-box;
     border-radius: 20px;
     box-shadow: 0 8px 10px -3px rgb(14, 13, 13);
+    margin: 0 auto;
 }
 .container:hover {
-    height: 45rem;
     width: 42rem;
     padding: 20px;
     box-shadow: 0 5px 5px -2px rgb(245, 237, 190);
-
 }
-input ,textarea{
+.form{
+    width: 70%;
+    background: linear-gradient(to top left,rgba(207, 187, 72, 0.4),rgb(0, 0, 0,0.2),rgba(36, 52, 126, 0.7));
+    box-sizing: border-box;
+    border-radius: 1rem;
+    box-shadow: 0 8px 10px -3px rgb(14, 13, 13);
+    padding: 2.5rem;
+    margin: 0 auto;
+}
+
+label{
+    color: #696967;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin:1rem auto ;
     display: block;
-    padding: 5px;
-    border: none;
-    border-radius: 5px; 
-    background-color:radial-gradient(rgb(247, 174, 107));
-    opacity: 0.5;
+    padding: 5px;   
     margin:5px auto ;
     width: 60%;
-    color: red;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+input ,textarea,select{
+    display: block;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 5px; 
+    opacity: 0.5;
+    margin:0.8rem auto ;
+    width: 60%;
+    color: rgb(247, 85, 85);
+    background: linear-gradient(to bottom right, rgb(238, 238, 200),rgb(212, 212, 181),rgb(18, 18, 18));
     font-weight: bold;
-    font-size: 15px;
+    font-size: 1.5rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+.form .formbtn{
+    margin: 1rem 10vw;
+}
+.info{
+    margin: 1rem auto;
+}
+.joinbtn{
+    margin: 0.8rem 14.4rem;
+    border-radius: 1.7rem;
+    font-size: 1.4rem;
+    font-weight:700;
+    padding:0.8rem 1.8rem;
+    border: none;
+    color: #000;
+    text-transform: uppercase;
+    border-radius: 2rem;
+  }
+
+  /*student list*/
+  .student_list{
+    display: flex;
+    justify-content:space-around;
+    margin: auto;
+  }
+  table {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    position:relative;
+    margin: 2rem auto;
+    max-width: 60%;
+  }
+  th{
+    background-color: #000;
+    color: wheat;
+  }
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font-weight: 700;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #edc879;
+  }
+  tr:nth-child(odd) {
+    background-color: #7feff9;
   }
