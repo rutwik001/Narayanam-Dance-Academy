@@ -7,21 +7,57 @@
         <div class="row">
             <div class="col-md-10 col-12 mx-auto">
                 <div class="row">
-                    <div class="col-12 main_header_left">
-                      <div class="container">
+                    <div class="col-md-8 col-12 main_header_left">
+                        <div class="form">
                         <form action="/join" method="post" id="contact">
-                           <input type="text" name="username" placeholder="Your Name" id="name">
-                           <input type="text" name="age" id="age" placeholder="Your Age">
-                            <input type="text" name="phone" id="phone" placeholder="Mobile No.">
-                           <textarea name="address" id="address" cols="10" rows="5" placeholder="Enter your Address"></textarea>
-                           <textarea name="more" id="more" cols="10" rows="5" placeholder="Dance Form you will like enroll"></textarea>
-                           <button class="btn joinbtn">Submit</button>
+                           <input type="text" name="username" placeholder="Your Name" id="name" required> 
+                           <input type="text" name="age" id="age" placeholder="Your Age" required> 
+                        <input type="text" name="phone" id="phone"  minlength="10"  maxlength="10" placeholder="Mobile No." required>
+                           <textarea name="address" id="address" cols="10" rows="2" placeholder="Enter your Address" required></textarea>
+                           <label for="danceform">Choose Dance form:</label>
+                           <select name="danceform" id="danceform" placeholder="Dance Form">
+                                <option value="Bollywood">Bollywood</option>
+                                <option value="Contempory">Contempory</option>
+                                <option value="Lyrical Hip-Hop">Lyrical Hip-Hop</option>
+                                <option value="Bharatnatyam">Bharatnatyam</option>
+                                <option value="Tap Dance">Tap Dance</option>
+                                <option value="Ballet">Ballet</option>
+                                <option value="Folk Dance">Folk Dance</option>
+                                <option value="Street Dance">Street Dance</option>
+                                <option value="Breakdancing">Breakdancing</option>
+                            </select>
+                           <button class="formbtn">Submit</button>
                         </form>
                       </div>
                     </div>
+                     <div class="col-md-4 col-12 main_header_right">
+                      <div class="info">
+                        <h2>Class Timings</h2>
+                        <p> ⏺️ Children(below 13) : 4pm to 6pm<br>⏺️ Teenager(13-18) : 6pm to 8pm<br>⏺️ Adults(Above 18) : 5pm to 8pm</p>    
+                      </div>
+                        
+                    </div>
+
                 </div>
             </div>
         </div>
+
+    <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row">
+                    <div class="col-md-10 col-12 main_header_left">
+                      <div class="info join">
+                         <h2>Dance Instructors</h2>
+                         <h3>⭐ Bollywood  - Jitesh Mewani<br>⭐ Bharatnatyam - Pandit Shankar Shastri<br>⭐ Ballet - Anupriya Agasti<br>⭐ Break Dancing - Jatin Gaikwad<br>⭐ Contemporary - Dharmesh Agrawal
+                         <br>⭐ Folk Dance - Shetal Mishra <br>⭐ Lyrical Hiphop - Janvi Munje<br>⭐ Street Dance - Shushant Ambare<br>⭐ Tap Dance - Joe Dixit</h3>
+
+                      </div>
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+
     </div>
 
 {{>footer}}
