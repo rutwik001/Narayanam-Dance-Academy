@@ -1,0 +1,44 @@
+{{>headerLinks}}
+<body>
+   {{>navbar}}
+
+    <!-- main-header -->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row">
+                    <div class="col-md-10 col-12 student_list">
+                        <table>
+                        <tr>
+
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Contact</th>
+                            <th>Address</th>
+                            <th>Dance Form</th>
+                        </tr>
+                       {{#each students}}
+                        <tr>
+                        
+                            <td>{{this.username}}</td>
+                            <td>{{this.age}}</td>
+                            <td>{{this.phone}}</td>
+                            <td>{{this.address}}</td>
+                            <td>{{this.danceform}}</td>
+                        </tr>
+                         {{/each}}
+                        </table>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+{{>footer}}
+
+    
+</body>
+</html>
