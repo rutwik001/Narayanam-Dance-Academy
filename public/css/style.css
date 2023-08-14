@@ -223,7 +223,7 @@ footer p{
     box-shadow: 0 5px 5px -2px rgb(245, 237, 190);
 }
 .form{
-    width: 70%;
+    width: 80%;
     background: linear-gradient(to top left,rgba(207, 187, 72, 0.4),rgb(0, 0, 0,0.2),rgba(36, 52, 126, 0.7));
     box-sizing: border-box;
     border-radius: 1rem;
